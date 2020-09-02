@@ -1,4 +1,7 @@
 <div>
+  <!--div class="hidden-block">
+
+  </div-->
   <mat-toolbar>
     <div fxLayout="row " fxLayoutAlign="space-between center" fxFlex="100">
       <div fxLayout="row" fxLayoutAlign="start center" fxFlex="18.527">
@@ -17,11 +20,12 @@
         <button class="mat-icon-btn" (click)="isPin = !isPin">
           <mat-icon>
             <img *ngIf="isPin" src="assets/images/pin.png" style="width:30px;height: 30px;">
-            <img *ngIf="!isPin" mode="side" src="assets/images/unpin.png" style="width:30px;height: 30px;">
+            <img *ngIf="!isPin" src="assets/images/unpin.png" style="width:30px;height: 30px;">
           </mat-icon>
         </button>
-        <button class="mat-icon-btn">
-          <mat-icon class="material-icon">expand_more</mat-icon>
+        <button class="mat-icon-btn" (click)="keyRotate()"><!--(click)="isRotate=!isRotate"*ngIf="isRotate"-->
+          <mat-icon [@upDownState]='state' class="material-icon" >keyboard_arrow_down</mat-icon>
+          <!--mat-icon class="material-icon" *ngIf="!isRotate">keyboard_arrow_up</mat-icon-->
         </button>
         <button class="mat-icon-btn">
           <mat-icon class="favourite">favorite</mat-icon>
@@ -45,14 +49,15 @@
           <mat-icon>notifications</mat-icon>
         </button>
         <button class="mat-icon-btn">
-          <mat-icon>person_pin</mat-icon>
+          <mat-icon>account_circle</mat-icon>
         </button>
       </div>
     </div>
   </mat-toolbar>
 </div>
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer mode="side" class="sidenav" opened = "true">
+<mat-sidenav-container class="sidenav-container" [ngStyle]="{'background-color': opened && isPin ? 'rgba(0,0,0,.6)' : 'inherit'}">
+  
+  <mat-sidenav #drawer mode="side" class="sidenav" [opened] = "true" >
     <br>
     <div fxLayout="column" fxLayoutAlign="center center">
       <img [src]="imgurl" class="img">

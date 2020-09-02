@@ -1,11 +1,10 @@
 .sidenav-container {
   height: 100%;
-  
 }
 
 .sidenav {
   width: 200px;
-  
+  top: 56px;
 }
 
 .sidenav .mat-toolbar {
@@ -13,11 +12,11 @@
 }
 
 .mat-toolbar{
-  position: relative;
+  position: fixed;
   background: #283593;
   color:white;
   height: 56px;
-  z-index: 1;
+  z-index: 999;
   
 }
 
@@ -59,4 +58,10 @@
   background: transparent;
   cursor: pointer;
   color: #e8eaf6;
+}
+
+.hidden-block{
+  background-image: url('/src/assets/images/header.png');
+  height: 256px;
+  background-size: 480px;
 }

@@ -13,8 +13,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { from } from 'rxjs';
-import { HttpClientModule } from '@angular/common/http';
-import { MatIconRegistry } from '@angular/material/icon';
+
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +31,7 @@ import { MatIconRegistry } from '@angular/material/icon';
     MatIconModule,
     MatListModule,
     FlexLayoutModule,
-    HttpClientModule,
+    ReactiveFormsModule
     //MatIconRegistry
   ],
   providers: [],
